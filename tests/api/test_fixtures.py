@@ -26,5 +26,5 @@ def test_change_second_name():
     user = User()
     user.create()
 
-    assert user.second_name == 'Sergii' 
+    assert user.second_name == 'Butenko' 
     user.remove()
