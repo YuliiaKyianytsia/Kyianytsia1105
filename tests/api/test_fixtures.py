@@ -14,17 +14,17 @@ class User:
     def remove(self):
         self.name = ""
         self.second_name = ""
+
+@pytet_fixture
+def user():
+    user = User()
+    user.create()
+
+    yeld user
     
 def test_change_name():
-    user = User()
-    user.create()
+    assert user.name == 'Sergii'  
 
-    assert user.name == 'Sergii' 
-    user.remove()
-  
 def test_change_second_name():
-    user = User()
-    user.create()
-
     assert user.second_name == 'Butenko' 
-    user.remove()
+    
