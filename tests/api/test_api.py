@@ -1,19 +1,21 @@
+import pytest
+
 class User:
 
     def __init__(self) -> None:
         self.name = "Sergii"
         self.second_name = "Butenko"
 
-user = User()
+@pytest.fixture
+def user():
+    yield user
 
-def test_remove_name():
-    user.name = ''
-    assert user.name == ''
+def test_remove(user):
+    user.name == ""
+    assert user.name == ""
 
-
-def test_name():
+def test_name(user):
     assert user.name == "Sergii"
 
-
-def test_second_name():
+def test_second_name(user):
     assert user.second_name == "Butenko"
