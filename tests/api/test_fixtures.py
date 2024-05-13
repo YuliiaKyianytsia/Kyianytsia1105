@@ -8,23 +8,27 @@ class User:
         self.second_name = None
 
     def create(self):
-        self.name = "Sergii"
-        self.second_name = "Butenko"
+        self.name = 'Sergii'
+        self.second_name = 'Butenko'
 
     def remove(self):
-        self.name = ""
-        self.second_name = ""
+        self.name = ''
+        self.second_name = ''
 
-@pytet_fixture
+
+@pytest.fixture
 def user():
     user = User()
     user.create()
 
     yeld user
-    
-def test_change_name():
-    assert user.name == 'Sergii'  
 
-def test_change_second_name():
+    user.remove()
+
+
+def test_change_name(user):
+    assert user.name == 'Sergii'
+
+def test_change_second_name(user):
     assert user.second_name == 'Butenko' 
     
