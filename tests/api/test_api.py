@@ -8,7 +8,7 @@ class User:
 
 @pytest.fixture
 def user():
-    yield User
+    yield User()
 
 def test_remove(user):
     user.name == ""
