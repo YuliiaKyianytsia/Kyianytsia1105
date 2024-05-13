@@ -3,8 +3,8 @@ import pytest
 class User:
 
     def __init__(self) -> None:
-        self.name = 'Sergii'
-        self.second_name = 'Butenko'
+        self.name = "Sergii"
+        self.second_name = "Butenko"
 
 @pytest.fixture
 def user():
@@ -15,7 +15,7 @@ def test_remove(user):
     assert user.name == ''
 
 def test_name(user):
-    assert user.name == 'Sergii'
+    assert user.name == "Sergii"
 
 def test_second_name(user):
-    assert user.second_name == 'Butenko'
+    assert user.second_name == "Butenko"
