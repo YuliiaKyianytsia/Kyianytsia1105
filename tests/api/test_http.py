@@ -10,5 +10,6 @@ def test_first_request():
 def test_second_request():
     r = requests.get('http://api.github.com/users/defunct')
     print(f"Response Body is {r.json()}")
+    assert r.status_code == 200
     print(f"Response Status code is {r.status_code}")
     print(f"Response Headers is {r.headers}")
