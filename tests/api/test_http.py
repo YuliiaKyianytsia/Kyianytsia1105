@@ -12,7 +12,7 @@ def test_second_request():
     r = requests.get('http://api.github.com/users/defunct')
     body = r.json()
 
-    assert body ['name'] == 'Chris Wanstrath'
+    assert body['name'] == 'Chris Wanstrath'
     assert r.status_code == 200
     print(f"Response Headers are {headers}")
     assert r.status_code == 200
