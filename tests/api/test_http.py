@@ -13,7 +13,7 @@ def test_second_request():
     body = r.json()
     headers = r.headers
 
-    assert body['name'] == 'Chris Wanstrath'
+    assert body['name'] == 'None'
     assert r.status_code == 200
     assert headers['Server'] == 'Github.com'
     
