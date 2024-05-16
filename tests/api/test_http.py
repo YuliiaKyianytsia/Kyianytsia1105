@@ -1,6 +1,7 @@
 import pytest
 import requests
 
+
 @pytest.mark.http
 def test_first_request():
     r = requests.get('http://api.github.com/zen')
@@ -9,7 +10,11 @@ def test_first_request():
 @pytest.mark.http
 def test_second_request():
     r = requests.get('http://api.github.com/users/defunct')
-    print(f"Response Body is {r.json()}")
+    body = r.json()
+
+    assert body ['name'] == 'Chris Wanstrath'
+    assert r.status_code == 200
+    print(f"Response Headers are {headers}")
     assert r.status_code == 200
     print(f"Response Status code is {r.status_code}")
     print(f"Response Headers is {r.headers}")
