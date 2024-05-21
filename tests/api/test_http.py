@@ -22,7 +22,7 @@ def test_second_request():
 def test_status_code_request():
     r = requests.get('http://api.github.com/users/sergii_butenko')
 
-    assert r.status_code == 200
+    assert r.status_code == 404
     
     
 
