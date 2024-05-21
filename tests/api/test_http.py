@@ -9,7 +9,7 @@ def test_first_request():
   
 @pytest.mark.http
 def test_second_request():
-    
+    r = requests.get('http://api.github.com/users/defunct')   
     print(f"Response Body is {r.json()}")
     print(f"Response Status code is {r.status_code}")
     print(f"Response Headers are {r.headers}")
