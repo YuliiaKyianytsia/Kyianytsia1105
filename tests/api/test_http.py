@@ -10,8 +10,8 @@ def test_first_request():
 @pytest.mark.http
 def test_second_request():
     
-    print(f"Response Headers are {headers}")
+    print(f"Response Body is {r.json()}")
     print(f"Response Status code is {r.status_code}")
-    print(f"Response Headers is {r.headers}")
+    print(f"Response Headers are {r.headers}")
 
    
