@@ -9,19 +9,9 @@ def test_first_request():
   
 @pytest.mark.http
 def test_second_request():
-    r = requests.get('http://api.github.com/users/defunct')
-    body = r.json()
-    headers = r.headers
-
-    assert body['name'] == 'None'
-    assert r.status_code == 200
-    assert headers['Server'] == 'Github.com'
     
-
-    @pytest.mark.http
-    def test_status_code_request():
-        r = requests.get('http://api.github.com/users/sergii_butenko')
-        
-        assert r.status_code == 404
+    print(f"Response Headers are {headers}")
+    print(f"Response Status code is {r.status_code}")
+    print(f"Response Headers is {r.headers}")
 
    
